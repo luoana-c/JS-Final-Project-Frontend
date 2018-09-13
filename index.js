@@ -58,6 +58,7 @@ function showSelectedImage (fullImageData) {
   const mainScreen = document.querySelector('#show-panel')
   const imageEl = document.createElement('img')
   imageEl.src = fullImageData.full_image
+  imageEl.className = 'animated fadeIn'
 
   const infoEl = document.createElement('h2')
   infoEl.innerText = `${fullImageData.name}, ${fullImageData.city}, ${fullImageData.country}`
@@ -72,12 +73,25 @@ function showSelectedImage (fullImageData) {
   const breakEl = document.createElement('br')
   const breakEl2 = document.createElement('br')
 
+  const mapDiv = document.createElement('div')
+  mapDiv.innerHTML = `
+  <br>
+  <div class="mapouter">
+  <div class="gmap_canvas">
+  <iframe width="600" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=${fullImageData.city}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" >
+  </iframe>
+  </div>
+  </div>
+  `
+
   mainScreen.append(imageEl)
   mainScreen.append(infoEl)
   mainScreen.append(websiteEl)
   mainScreen.append(breakEl)
   mainScreen.append(breakEl2)
   mainScreen.append(wishListButton)
+
+  mainScreen.append(mapDiv)
 
   wishListButton.addEventListener('click', event => {
     if (hotelIsWishlisted(fullImageData)) {

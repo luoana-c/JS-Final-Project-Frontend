@@ -1,14 +1,18 @@
+body {
+	height: 100vh;
+}
+
+
 #all-images {
 	display: grid;
-	grid-template-columns: 2fr 8fr;
-
+	grid-template-columns: 1fr 8fr;
 }
 
 #list-panel {
-	height: 100vh;
+	height: 110vh;
   width: 220px;
-  overflow-y: scroll;
 	background-color: rgb(218,248,236);
+	overflow-y: hidden;
 }
 
 #list-panel img:hover {
@@ -19,15 +23,17 @@
 #list-panel img {
 	padding: 12px;
 	cursor: pointer;
-	margin: auto;
+	margin: 0 auto;
 }
 
 #list-panel div {
-	display: flex;
+	margin: 0 auto;
 }
 
 #show-panel {
-	padding: 45px;
+	margin: 0 100px;
+	max-width: 800px;
+	padding: 30px 0;
 }
 
 header {
@@ -87,6 +93,8 @@ button {
 #images {
 	display: flex;
 	flex-direction: column;
+	height: 100%;
+	overflow-y: scroll;
 }
 
 #filter-div {
@@ -96,6 +104,12 @@ button {
 #wish-list-filter {
   width: 180px;
   font-size: 0.9em;
-	margin: 45px auto;
-
+	margin: 30px auto;
 }
+
+#show-panel-container {
+	background-color:rgb(255,254,248;
+}
+
+
+/* .mapouter{text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;} */
